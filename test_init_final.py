@@ -892,8 +892,9 @@ class taskCog(commands.Cog):
 			print("채널 id 오류")
 			return
 		print("명치 1")
+		print(asyncio.Task.all_tasks())
 		for t in asyncio.Task.all_tasks():
-			print(t._coro.__name__)
+			# print(t._coro.__name__)
 			if t._coro.__name__ == f"boss_check":
 				if t.done():
 					try:
