@@ -893,7 +893,7 @@ class taskCog(commands.Cog):
 			return
 		print("명치 1")
 		print(asyncio.all_tasks())
-		for t in asyncio.Task.all_tasks():
+		for t in asyncio.all_tasks():
 			# print(t._coro.__name__)
 			if t._coro.__name__ == f"boss_check":
 				if t.done():
