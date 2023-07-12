@@ -889,6 +889,7 @@ class taskCog(commands.Cog):
 	@commands.command(name=command[8][0], aliases=command[8][1:])
 	async def command_task_list(self, ctx : commands.Context):
 		if ctx.message.channel.id != basicSetting[7]:
+			print("채널 id 오류")
 			return
 
 		for t in asyncio.Task.all_tasks():
