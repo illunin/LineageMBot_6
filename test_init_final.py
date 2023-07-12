@@ -889,10 +889,8 @@ class taskCog(commands.Cog):
 	@commands.command(name=command[8][0], aliases=command[8][1:])
 	async def command_task_list(self, ctx : commands.Context):
 		if ctx.message.channel.id != basicSetting[7]:
-			print("채널 id 오류")
 			return
-		print("명치 1")
-		print(asyncio.all_tasks())
+			
 		for t in asyncio.all_tasks():
 			# print(t._coro.__name__)
 			if t._coro.__name__ == f"boss_check":
@@ -905,7 +903,6 @@ class taskCog(commands.Cog):
 					continue
 				t.cancel()
 		# await ctx.send( '< 보탐봇 명치 맞고 숨 고르기 중! 잠시만요! >', tts=False)
-		print("명치 2")
 		try:
 			file = discord.File("./명치.JPG")
 			await ctx.send(file = file)
